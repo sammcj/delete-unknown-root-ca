@@ -5,7 +5,7 @@
 
 function remove {
     echo "Removing ${1}"
-    sudo security delete-certificate -Z $2 /System/Library/Keychains/SystemRootCertificates.keychain
+    sudo security delete-certificate -t -Z $2 /System/Library/Keychains/SystemRootCertificates.keychain
 }
 
 remove "Federal Govt Cert" "905F942FD9F28F679B378180FD4F846347F645C1"
