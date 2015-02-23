@@ -3,6 +3,7 @@
 Inspired by http://zitseng.com/archives/7489
 
 Deletes Known Government Controlled Root Certs from OSX 10.10
+
 Also removes any user trust settings for each certificate
 
 ##### WARNINGS
