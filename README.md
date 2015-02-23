@@ -29,6 +29,7 @@ Either submit a pull request or provide me with the SHA1 of the root-ca you've f
 #### See Also
 
 * http://convergence.io
+* https://addons.mozilla.org/en-US/firefox/addon/certificate-patrol/
 * https://github.com/kirei/catt
 * https://www.eff.org/observatory
 * https://bugzilla.mozilla.org/show_bug.cgi?id=478418
