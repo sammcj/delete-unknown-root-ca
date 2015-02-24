@@ -1,4 +1,4 @@
-### Delete Known Government-Linked Certificate Authorities in OS X
+### Delete Known Government-Linked Certificate Authorities in OSX
 
 Inspired by http://zitseng.com/archives/7489
 
