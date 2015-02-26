@@ -1,5 +1,7 @@
 ### Delete Known Government-Linked Certificate Authorities in OSX
 
+[![Join the chat at https://gitter.im/sammcj/delete-unknown-root-ca](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sammcj/delete-unknown-root-ca?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Inspired by http://zitseng.com/archives/7489
 
 Deletes Known Government Controlled Root Certs from OSX 10.10
