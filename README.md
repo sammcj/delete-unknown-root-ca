@@ -32,6 +32,7 @@ Either submit a pull request or provide me with the SHA1 of the root-ca you've f
 
 #### See Also
 
+* https://github.com/chengr28/RevokeChinaCerts
 * http://convergence.io
 * https://addons.mozilla.org/en-US/firefox/addon/certificate-patrol/
 * https://github.com/kirei/catt
