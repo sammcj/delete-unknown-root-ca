@@ -39,3 +39,4 @@ Either submit a pull request or provide me with the SHA1 of the root-ca you've f
 * https://bugzilla.mozilla.org/show_bug.cgi?id=478418
 * http://support.apple.com/en-us/HT202858
 * https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning
+* http://googleonlinesecurity.blogspot.com.au/2015/03/maintaining-digital-certificate-security.html
