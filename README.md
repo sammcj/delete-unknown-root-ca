@@ -41,3 +41,4 @@ Either submit a pull request or provide me with the SHA1 of the root-ca you've f
 * http://support.apple.com/en-us/HT202858
 * https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning
 * http://googleonlinesecurity.blogspot.com.au/2015/03/maintaining-digital-certificate-security.html
+* http://www.theregister.co.uk/2016/09/27/mozilla_wants_woeful_wosign_certs_off_the_list/
