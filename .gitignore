@@ -174,3 +174,6 @@ Gemfile.lock
 # Bootstrap files
 *private*.rc
 redo_aliases
+
+# Docker
+**/docker-compose.override.y*ml
