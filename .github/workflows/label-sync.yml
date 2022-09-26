@@ -1,0 +1,28 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+name: "Sync Available Github Labels"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 4 * * *"
+
+permissions:
+  pull-requests: write
+  contents: read
+
+# One build per branch, cancel out of date builds
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: EndBug/label-sync@v2
+        with:
+          delete-other-labels: true
+          dry-run: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: .github/config/labels.yml

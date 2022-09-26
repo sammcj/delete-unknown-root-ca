@@ -1,0 +1,26 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+name: "Lint Github Actions Workflows"
+
+# This is a gross hack to allow PRs that don't require a specific workflow to run (e.g. don't lint files not touched) by providing a positive status check in their place.
+# This workflow runs on an inverse match using the paths-ignore filter, so it will only run if the PR doesn't touch any of the paths that the other linting workflow does
+# The "name:" must match the name of the workflow it's skipping.
+# As recommended by Github - https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/troubleshooting-required-status-checks#handling-skipped-but-required-checks
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+    branches:
+      - "main"
+    paths-ignore:
+      - ".github/**"
+
+jobs:
+  lint-actions-workflows:
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo "This workflow is a placeholder for PRs that don't require linting of Github Actions workflows"
