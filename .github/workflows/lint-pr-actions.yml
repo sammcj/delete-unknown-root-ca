@@ -1,0 +1,34 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+name: "Lint Github Actions Workflows"
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+    branches:
+      - "main"
+    paths:
+      - ".github/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  lint-actions-workflows:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - uses: reviewdog/action-actionlint@v1
+      with:
+        actionlint_flags: -color -ignore 'SC2086' -ignore 'SC2129'
+        fail_on_error: false
+        level: error
+        reporter: github-pr-review
+      env:
+        REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

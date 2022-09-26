@@ -1,0 +1,23 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+name: "Check for TODOs and create or update issues"
+
+on: ["push"]
+
+permissions:
+  issues: write
+  contents: read
+
+# One build per branch, cancel out of date builds
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  todo-issues:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v3"
+      - name: "Check for TODOs and create or update issues"
+        uses: "alstr/todo-to-issue-action@v4"
+        id: "todo"

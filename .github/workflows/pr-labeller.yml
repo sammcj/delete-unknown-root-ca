@@ -1,0 +1,38 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+name: "Pull Request Labeller"
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+      - ready_for_review
+    branches:
+      - main
+      - master
+  issues:
+  issue_comment:
+
+# One build per branch, cancel out of date builds
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  issues: write
+  pull-requests: write
+  statuses: write
+  checks: write
+  contents: read
+
+jobs:
+  pr-labeller:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fuxingloh/multi-labeler@v1
+        id: pr-labeller
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          config-path: .github/config/labeller.yml
