@@ -21,6 +21,7 @@ jobs:
     name: Sync Github Labels
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: EndBug/label-sync@v2
         with:
           delete-other-labels: true

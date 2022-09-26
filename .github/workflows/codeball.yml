@@ -1,0 +1,26 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+name: Codeball
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  checks: write
+
+jobs:
+  codeball-review:
+    runs-on: ubuntu-latest
+    name: Run Codeball Code Review
+    steps:
+      - name: Codeball AI Actions
+        uses: sturdy-dev/codeball-action@v2
+        with:
+          approvePullRequests: "false"
+          labelPullRequestsWhenApproved: "true"
+          labelPullRequestsWhenReviewNeeded: "true"
+          failJobsWhenReviewNeeded: "false"
