@@ -1,0 +1,73 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+# .github/config/labels.yml
+
+- name: "Feat"
+  color: "c52bff"
+  aliases: ["Feature", "Features"]
+
+- name: "Fix"
+  color: "125a29"
+  aliases: ["bug", "bugfix", "patched", "Hotfix"]
+
+- name: "Chore"
+  color: "293535"
+  aliases: ["maintenance", "maint"]
+
+- name: "Docs"
+  color: "7c9e9d"
+  aliases: ["doco", Documentation']
+
+- name: "CDK"
+  color: "ce7e00"
+  aliases: ["AWS", "cloudformation", "CFn"]
+
+- name: "Github"
+  color: "ff1089"
+  aliases: ["Actions", "Workflow"]
+
+- name: "Git"
+  color: "3e6890"
+
+- name: "Test"
+  color: "981f5c"
+  aliases: ["testing", "tests", "Jest"]
+
+- name: "Style"
+  color: "0018a8"
+  aliases: ["lint", "formatting", "styling", "prettier", "eslint"]
+
+- name: "Database"
+  color: "43e8d8"
+  aliases: ["DB", "SQL", "Flyway", "Migrations"]
+
+- name: "Security"
+  color: "f51100"
+  aliases: ["sec", "vulnerability", "CVE", "vuln", "CODEOWNERS"]
+
+- name: "Performance"
+  color: "ff825a"
+  aliases: ["perf", "optimisation"]
+
+- name: "DO NOT MERGE"
+  color: "d54360"
+  aliases: ["DONT MERGE", "WIP", "Work In Progress"]
+
+- name: "renovatebot"
+  color: "123000"
+  aliases: ["Renovate"]
+
+- name: "minor"
+  color: "123000"
+  aliases: ["minor-update"]
+
+- name: "major"
+  color: "123000"
+  aliases: ["major-update"]
+
+- name: "patch"
+  color: "123000"
+  aliases: ["patch-update"]
+
+- name: "sync-files"
+  color: "130000"

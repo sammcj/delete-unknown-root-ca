@@ -1,0 +1,207 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+# .github/config/labeller.yml
+
+version: v1
+
+labels:
+  - label: "Feat"
+    sync: true
+    matcher:
+      title: ".*(feat:|(IF-[0-9]+ -- (feat))).*/i"
+      body: "(feat:.*|feature:.*)/i"
+      branch: "(^feat\/.*)/i"
+      baseBranch: "(^feat\/.*)/i"
+      commits: "(^feat:.*|(IF-[0-9]+ -- (feat))).*/i"
+
+  - label: "Fix"
+    sync: true
+    matcher:
+      title: "(^hotfix:.*|^fix:.*|(IF-[0-9]+ -- (fix|hotfix).*))/i"
+      body: "(hotfix:.*|fix:.*|bug:.*)/i"
+      branch: "(^hotfix\/.*|^fix\/.*)/i"
+      baseBranch: "(^hotfix\/.*|^fix\/.*)/i"
+      commits: "(^hotfix:.*|^fix:.*|(IF-[0-9]+ -- (fix|hotfix).*))/i"
+
+  - label: "Chore"
+    sync: true
+    matcher:
+      title: "(^chore:.*|(IF-[0-9]+ -- chore.*))/i"
+      body: "(hotfix:.*|fix:.*|bug:.*)/i"
+      branch: "(^chore\/.*)/i"
+      baseBranch: "(^chore\/.*)/i"
+      commits: "(^chore:.*|(IF-[0-9]+ -- chore.*))/i"
+      author:
+        - "renovatebot"
+        - "renovatebot[bot]"
+
+  - label: "Docs"
+    sync: true
+    matcher:
+      title: "(^docs:.*|(IF-[0-9]+ -- docs.*))/i"
+      body: "(docs:.*|documentation:)/i"
+      branch: "(^docs\/.*)/i"
+      baseBranch: "(^docs\/.*)/i"
+      commits: "(^docs:.*|(IF-[0-9]+ -- docs.*))/i"
+      files:
+        any:
+          [
+            "**/docs/**",
+            "**/doc/**",
+            "**/*.md",
+            "**/*.markdown",
+            "**/*.rst",
+            "**/*.txt",
+          ]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "CDK"
+    sync: true
+    matcher:
+      title: "(.*cdk|(IF-[0-9]+ -- cdk).*)/i"
+      body: ".*(cdk:|cloudformation:).*/i"
+      branch: "(.*cdk\/.*)/i"
+      baseBranch: "(.*cdk\/.*)/i"
+      commits: "(.*cdk:|(IF-[0-9]+ -- cdk)).*/i"
+      files:
+        any: ["**/cdk/**", "**/cloudformation/**", "**/*.cdk.*", "**/*.stack.*"]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "Github"
+    sync: true
+    matcher:
+      title: "(^actions:.*|(IF-[0-9]+ -- actions.*)|^workflow:.*|(IF-[0-9]+ -- workflow.*)|.*github:.*|(IF-[0-9]+ -- github.*))/i"
+      body: ".*(actions:.*|github-actions:|github:|workflow:).*/i"
+      branch: "(^actions\/.*|^github\/.*^workflow\/.*)/i"
+      baseBranch: "(^actions\/.*|^github\/.*^workflow\/.*)/i"
+      commits: "(^actions:.*|(IF-[0-9]+ -- actions.*)|^workflow:.*|(IF-[0-9]+ -- workflow.*)|^github:.*|(IF-[0-9]+ -- github.*))/i"
+      files:
+        any: [".github\/*", "CODEOWNERS"]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "Test"
+    sync: true
+    matcher:
+      title: "(^test|(IF-[0-9]+ -- test)|jest).*/i"
+      body: ".*(tests:|test:|testing:|jest:).*/i"
+      branch: "(^test\/.*)/i"
+      baseBranch: "(^test\/.*)/i"
+      commits: "(^tests:.*|^test:.*|(IF-[0-9]+ -- test.*))/i"
+      files:
+        any: ["**/.*(test|.spec).*", "**/.*jest.*"]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "Performance"
+    sync: true
+    matcher:
+      title: "(^perf:|(IF-[0-9]+ -- perf)).*/i"
+      body: "(perf:|performance:).*/i"
+      branch: "(^perf\/.*)/i"
+      baseBranch: "(^perf\/.*)/i"
+      commits: "(^perf:|(IF-[0-9]+ -- perf)).*/i"
+
+  - label: "Style"
+    sync: true
+    matcher:
+      title: ".*(style:|(IF-[0-9]+ -- (style|lint)|lint)).*/i"
+      body: ".*(style:|styling:|lint:|linting|format:|formatting).*/i"
+      branch: "(^style\/.*)/i"
+      baseBranch: "(^style\/.*)/i"
+      commits: ".*(style:|(IF-[0-9]+ -- style)|lint|formatting.*)/i"
+      files:
+        any:
+          [
+            "**/.*prettier.*",
+            "**/.*eslint.*",
+            "**/.*stylelint.*",
+            "**/.*style.*",
+            "**/.*lint.*",
+            "**/.*editorconfig.*",
+          ]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "Database"
+    sync: true
+    matcher:
+      title: "(^db:.*|.*sql.*|(IF-[0-9]+ -- db.*))/i"
+      body: ".*(db:|database:).*/i"
+      branch: "(^db\/.*)/i"
+      baseBranch: "(^db\/.*)/i"
+      commits: "(^db:.*|.*sql|(IF-[0-9]+ -- db.*))/i"
+      files:
+        # regex glob to match a file with extension .sql in any directory recursively
+        any:
+          [
+            "**/*.sql",
+            "**/*.db",
+            "**/db/**",
+            "**/flyway.*",
+            "**/migrations/**",
+            "**/*.sqlite.*",
+          ]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "Security"
+    sync: true
+    matcher:
+      title: ".*(CVE|sec:|security).*/i"
+      body: ".*(CVE|sec:|security).*/i/i"
+      branch: ".*(CVE|sec:|security).*/i"
+      baseBranch: ".*(CVE|sec:|security).*/i"
+      commits: ".*(CVE|sec:|security).*/i"
+      files:
+        any:
+          [
+            "CODEOWNERS",
+            "SECURITY.*",
+            ".github/settings.yml",
+            "**/*.pem",
+            "**/*.crt",
+            "**/.*password.*",
+            "**/.*secret.*",
+            "**/.*token.*",
+            "**/.*key.*",
+          ]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "Git"
+    sync: true
+    matcher:
+      title: ".*git.*/i"
+      files:
+        any: ["**/.git.*", "**/.husky/*"]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: "Sync-Files"
+    sync: true
+    matcher:
+      title: ".*Sync-Files.*/i"
+
+  - label: "DO NOT MERGE"
+    sync: true
+    matcher:
+      title: ".*(DO NOT MERGE|DONT MERGE|DON'T MERGE).*"
+      body: ".*(DO NOT MERGE|DONT MERGE|DON'T MERGE).*"
+      commits: ".*(DO NOT MERGE|DONT MERGE|DON'T MERGE).*"
+
+checks:
+  - context: "Merge check"
+    description: "Disable merging when 'DO NOT MERGE' label is set"
+    labels:
+      none: ["DO NOT MERGE"]
