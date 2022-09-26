@@ -1,0 +1,27 @@
+#### THIS FILE IS MANAGED BY AN AUTOMATED WORKFLOW ####
+
+.ide
+.idea
+.vscode
+**/__pycache__
+**/__pypackages__
+**/.bin
+**/.DS_Store
+**/.env.*
+**/.git
+**/.out
+**/.venv
+**/*.log
+**/*.tmp
+**/build
+**/cdk.out
+**/coverage
+**/dist
+**/global.setup.ts
+**/htmlcov
+**/logs
+**/node_modules
+**/public
+**/temp
+**/tmp
+**/venv
