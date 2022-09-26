@@ -71,3 +71,12 @@
 
 - name: "sync-files"
   color: "130000"
+
+- name: "codeball:needs-careful-review"
+  color: "fde68a"
+  description: "This PR needs careful review"
+  aliases: ["codeball:needs-review"]
+
+- name: "codeball:approved"
+  color: "86efac"
+  description: "This PR has been approved by Codeball AI"
