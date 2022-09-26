@@ -20,15 +20,16 @@ permissions:
 
 jobs:
   lint-actions-workflows:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - uses: reviewdog/action-actionlint@v1
-      with:
-        actionlint_flags: -color -ignore 'SC2086' -ignore 'SC2129'
-        fail_on_error: false
-        level: error
-        reporter: github-pr-review
-      env:
-        REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    name: Lint Actions Workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: reviewdog/action-actionlint@v1
+        with:
+          actionlint_flags: -color -ignore 'SC2086' -ignore 'SC2129'
+          fail_on_error: false
+          level: error
+          reporter: github-pr-review
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
