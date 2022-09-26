@@ -29,6 +29,7 @@ permissions:
 
 jobs:
   pr-labeller:
+    name: "Pull Request Labeller"
     runs-on: ubuntu-latest
     steps:
       - uses: fuxingloh/multi-labeler@v1

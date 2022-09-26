@@ -21,6 +21,7 @@ on:
 
 jobs:
   lint-actions-workflows:
-  runs-on: ubuntu-latest
-  steps:
-    - run: echo "This workflow is a placeholder for PRs that don't require linting of Github Actions workflows"
+    name: Lint Actions Workflows
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This workflow is a placeholder for PRs that don't require linting of Github Actions workflows"
