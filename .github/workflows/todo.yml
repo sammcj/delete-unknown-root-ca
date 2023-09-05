@@ -17,7 +17,7 @@ jobs:
   todo-issues:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v3"
+      - uses: "actions/checkout@v4"
       - name: "Check for TODOs and create or update issues"
         uses: "alstr/todo-to-issue-action@v4"
         id: "todo"
