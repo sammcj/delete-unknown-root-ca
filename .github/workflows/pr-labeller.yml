@@ -32,7 +32,7 @@ jobs:
     name: "Pull Request Labeller"
     runs-on: ubuntu-latest
     steps:
-      - uses: fuxingloh/multi-labeler@v1
+      - uses: fuxingloh/multi-labeler@v2
         id: pr-labeller
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
